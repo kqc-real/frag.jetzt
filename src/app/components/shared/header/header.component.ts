@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   shortId: string;
   deviceType: string;
   moderationEnabled: boolean;
-  cookiesDeclined: boolean;
 
   constructor(public location: Location,
               private authenticationService: AuthenticationService,
@@ -74,8 +73,6 @@ export class HeaderComponent implements OnInit {
       }
     });
     this.moderationEnabled = (localStorage.getItem('moderationEnabled') === 'true') ? true : false;
-
-    this.cookiesDeclined = localStorage.getItem('cookieAccepted') === 'false';
   }
 
   getTime(time: Date) {
@@ -129,6 +126,10 @@ export class HeaderComponent implements OnInit {
           this.deleteAccount(this.user.id);
         }
       });
+  }
+
+  cookiesDisabled(): boolean {
+    return localStorage.getItem('cookieAccepted') === 'false';
   }
 
 }
