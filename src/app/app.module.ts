@@ -54,6 +54,7 @@ import { ImprintEnComponent } from '../assets/i18n/imprint/imprint-en';
 import { ImprintDeComponent } from '../assets/i18n/imprint/imprint-de';
 import { HelpDeComponent } from '../assets/i18n/help/help-de';
 import { HelpEnComponent } from '../assets/i18n/help/help-en';
+import { OverlayComponent } from './components/home/_dialogs/overlay/overlay.component';
 
 export function dialogClose(dialogResult: any) {
 }
@@ -86,14 +87,16 @@ export function initializeApp(appConfig: AppConfig) {
     ImprintEnComponent,
     ImprintDeComponent,
     HelpDeComponent,
-    HelpEnComponent
+    HelpEnComponent,
+    OverlayComponent
   ],
   entryComponents: [
     RegisterComponent,
     PasswordResetComponent,
     UserActivationComponent,
     DemoVideoComponent,
-    CookiesComponent
+    CookiesComponent,
+    OverlayComponent
   ],
   imports: [
     AppRoutingModule,

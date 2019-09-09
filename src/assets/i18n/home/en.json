@@ -145,6 +145,11 @@
   "decline": "Decline",
   "decline-label": "Declines cookie usage and exits the app"
   },
+  "overlay": {
+    "message": "You have not allowed the use of cookies for this site. Thus you will not be able to use this site for the time being.",
+    "change": "Change settings",
+    "change-label": "Opens the dialog with the cookie settings"
+  },
   "data-protection": {
   "title": "Data Protection",
   "consent": "Accept",
