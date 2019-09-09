@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
   shortId: string;
   deviceType: string;
   moderationEnabled: boolean;
+  cookiesDeclined: boolean;
 
   constructor(public location: Location,
               private authenticationService: AuthenticationService,
@@ -78,6 +79,7 @@ export class HeaderComponent implements OnInit {
       }
     });
     this.moderationEnabled = (localStorage.getItem('moderationEnabled') === 'true') ? true : false;
+    this.cookiesDeclined = localStorage.getItem('cookieAccepted') === 'false';
     this._r.listen(document, 'keyup', (event) => {
       if (document.getElementById('back-button') && event.keyCode === 48 && this.eventService.focusOnInput === false) {
         document.getElementById('back-button').focus();

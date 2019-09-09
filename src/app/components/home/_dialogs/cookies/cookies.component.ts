@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataProtectionComponent } from '../data-protection/data-protection.component';
 import { MatDialog } from '@angular/material';
+import { OverlayComponent } from '../overlay/overlay.component';
 
 @Component({
   selector: 'app-cookies',
@@ -20,18 +21,27 @@ export class CookiesComponent implements OnInit {
 
   acceptCookies() {
     localStorage.setItem('cookieAccepted', 'true');
+    localStorage.setItem('dataProtectionConsent', 'true');
   }
 
-  exitApp() {
+  declineCookies() {
     localStorage.setItem('cookieAccepted', 'false');
-    // TODO somehow exit the app, since the user didn't accept cookie usage
+
+    this.openOverlay();
   }
 
   openDataProtection() {
   const dialogRef = this.dialog.open(DataProtectionComponent, {
-    height: '95%',
-    width: '75%'
+    height: '95%'
   });
   dialogRef.componentInstance.deviceType = this.deviceType;
-}
+  }
+
+  openOverlay() {
+    const dialogRef = this.dialog.open(OverlayComponent, {
+      height: '95%'
+    });
+    dialogRef.componentInstance.deviceType = this.deviceType;
+    dialogRef.disableClose = true;
+  }
 }
