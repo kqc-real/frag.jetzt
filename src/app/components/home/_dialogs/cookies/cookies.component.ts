@@ -39,7 +39,7 @@ export class CookiesComponent implements OnInit {
 
   openOverlay() {
     const dialogRef = this.dialog.open(OverlayComponent, {
-      height: '95%'
+      width: '60%'
     });
     dialogRef.componentInstance.deviceType = this.deviceType;
     dialogRef.disableClose = true;
