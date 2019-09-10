@@ -29,8 +29,7 @@ export class CookiesComponent implements OnInit {
 
   openDataProtection() {
   const dialogRef = this.dialog.open(DataProtectionComponent, {
-    height: '95%',
-    width: '75%'
+    width: '60%'
   });
   dialogRef.componentInstance.deviceType = this.deviceType;
 }

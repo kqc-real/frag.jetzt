@@ -73,7 +73,6 @@ showDemo() {
 
 showCookieModal() {
   const dialogRef = this.dialog.open(CookiesComponent, {
-    height: '95%',
     width: '60%',
     autoFocus: false
   });
@@ -83,24 +82,21 @@ showCookieModal() {
 
 showImprint() {
   const dialogRef = this.dialog.open(ImprintComponent, {
-    height: '95%',
-    width: '75%'
+    width: '40%'
   });
   dialogRef.componentInstance.deviceType = this.deviceType;
 }
 
 showHelp() {
   const dialogRef = this.dialog.open(HelpPageComponent, {
-    height: '95%',
-    width: '75%'
+    width: '60%'
   });
   dialogRef.componentInstance.deviceType = this.deviceType;
 }
 
 showDataProtection() {
   const dialogRef = this.dialog.open(DataProtectionComponent, {
-    height: '95%',
-    width: '75%'
+    width: '60%'
   });
   dialogRef.componentInstance.deviceType = this.deviceType;
 }
