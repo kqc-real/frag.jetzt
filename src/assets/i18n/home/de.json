@@ -106,6 +106,7 @@
     "input-incorrect": "Bitte prüfe deine Eingaben.",
     "login": "Anmelden mit Konto",
     "login-data-incorrect": "Benutzername oder Passwort falsch",
+    "login-description": "Anmelden mit Konto",
     "login-successful": "Anmeldung erfolgreich",
     "not-registered": "Noch kein Konto?",
     "or": "oder",
