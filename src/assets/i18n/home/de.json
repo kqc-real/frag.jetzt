@@ -129,8 +129,8 @@
     "email-required": "E-Mail Adresse erforderlich",
     "input-incorrect": "Bitte prüfe deine Eingaben.",
     "reset-password": "Passwort zurücksetzen",
-    "reset-password-description": "Passwort zurücksetzen",
-    "reset-successful": "Passwort wurde zurückgesetzt. Bitte prüfe dein Postfach."
+    "reset-password-description": "Hier kannst du dein Passwort zurücksetzen.",
+    "reset-successful": "Dein Passwort wurde zurückgesetzt. Bitte prüfe dein Postfach."
   },
   "register": {
     "cancel": "Zurück",
@@ -145,7 +145,7 @@
     "password-unmatch": "Passwörter stimmen nicht überein",
     "password-verify": "Passwort wiederholen",
     "register": "Registrieren",
-    "register-description": "Benutzer registrieren",
+    "register-description": "Registrieren",
     "register-request-error": "Etwas ist bei der Registrierung fehlgeschlagen. Hast du dich vielleicht schon registriert?",
     "register-successful": "Erfolgreich registriert. Bitte prüfe dein Postfach.",
     "register-unsuccessful": "Bitte prüfe deine Eingaben."
