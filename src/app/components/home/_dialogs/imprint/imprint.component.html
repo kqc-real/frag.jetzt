@@ -8,13 +8,12 @@
     <app-imprint-de *ngIf="currentLang=='de'"></app-imprint-de>
   </div>
   <mat-divider></mat-divider>
-  <div mat-dialog-actions class="action-container">
-    <span class="spacer"></span>
-    <button mat-raised-button [mat-dialog-close]
-            aria-labelledby="close-label">{{ 'imprint.close' | translate }}</button>
-  </div>
 
-  <div class="visually-hidden">
-    <div id="close-label">{{ 'imprint.close-label'| translate }}</div>
-  </div>
+  <app-dialog-action-buttons
+    buttonsLabelSection="imprint"
+    confirmButtonLabel="close"
+    [confirmButtonType]=confirmButtonType
+    [confirmButtonClickAction]="buildConfirmActionCallback()"
+  ></app-dialog-action-buttons>
+
 </div>
