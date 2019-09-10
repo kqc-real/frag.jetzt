@@ -132,10 +132,13 @@
     "email": "E-mail",
     "email-invalid": "E-mail is invalid.",
     "email-required": "E-mail required",
+    "forgot-password": "Forgot the password?",
     "input-incorrect": "Please check your data.",
     "reset-password": "Reset password",
     "reset-password-description": "Reset password",
-    "reset-successful": "Password was reset. Please check your mails."
+    "reset-successful": "Password was reset. Please check your mails.",
+    "set-new-password": "Set new password with the reset key",
+    "set-new-password-button": "Set password"
   },
   "register": {
     "cancel": "Cancel",
@@ -145,6 +148,7 @@
     "email-required": "E-mail required",
     "email-unmatch": "E-mails do not match.",
     "email-verify": "Verify e-mail",
+    "forgot-password": "Forgot the password?",
     "password": "Password",
     "password-required": "Password required",
     "password-unmatch": "Passwords do not match.",
