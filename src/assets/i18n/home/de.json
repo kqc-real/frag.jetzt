@@ -13,9 +13,9 @@
   },
   "data-protection": {
     "consent": "Akzeptieren",
-    "consent-label": "Akzeptiert die Datenschutzrichtlinien der Anwendung.",
+    "consent-label": "Akzeptiert die Datenschutzerklärung der Anwendung.",
     "deny": "Ablehnen",
-    "deny-label": "Lehnt die Datenschutzrichtlinien ab.",
+    "deny-label": "Lehnt die Datenschutzerklärung der Anwendung ab.",
     "title": "Datenschutz"
   },
   "delete-account": {

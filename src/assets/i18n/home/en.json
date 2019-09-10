@@ -4,7 +4,7 @@
     "accept-label": "Accepts the use of cookies and proceeds to the app",
     "decline": "Decline",
     "decline-label": "Declines cookie usage and exits the app",
-    "info-label": "Opens a dialog with the frag.jetzt privacy statement"
+    "info-label": "Opens a dialog with the frag.jetzt privacy policy"
   },
   "overlay": {
     "message": "You have declined cookie usage for this app, thus you can not use it for the time being.",
@@ -16,7 +16,7 @@
     "consent-label": "Accept the app's privacy policy and close dialog",
     "deny": "Decline",
     "deny-label": "Decline the app's privacy policy and close dialog",
-    "title": "Data Protection"
+    "title": "Privacy policy"
   },
   "delete-account": {
     "cancel": "Cancel",
@@ -35,7 +35,7 @@
     "bright": "Bright background",
     "dark": "Dark background",
     "demo": "Demo",
-    "dsgvo": "Data Protection",
+    "dsgvo": "Privacy policy",
     "english": "English",
     "german": "German",
     "help": "Help",
