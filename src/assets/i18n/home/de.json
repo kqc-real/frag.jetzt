@@ -107,15 +107,10 @@
     "login": "Anmelden mit Konto",
     "login-data-incorrect": "Benutzername oder Passwort falsch",
     "login-successful": "Anmeldung erfolgreich",
+    "not-registered": "Noch kein Konto?",
     "or": "oder",
     "password": "Passwort",
-    "password-required": "Passwort erforderlich"
-  },
-  "login-page": {
-    "cancel": "Zurück",
-    "cancel-description": "Zurück",
-    "login": "Anmelden mit Konto",
-    "not-registered": "Noch kein Konto?",
+    "password-required": "Passwort erforderlich",
     "password-reset": "Passwort vergessen?",
     "register": "Registrieren",
     "welcome": "Online fragen & Fragen voten"
