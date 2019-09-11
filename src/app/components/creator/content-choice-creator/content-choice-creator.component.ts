@@ -7,7 +7,6 @@ import { MatDialog } from '@angular/material';
 import { AnswerEditComponent } from '../_dialogs/answer-edit/answer-edit.component';
 import { ContentType } from '../../../models/content-type.enum';
 import { TranslateService } from '@ngx-translate/core';
-import { EventService } from '../../../services/util/event.service';
 
 export class DisplayAnswer {
   answerOption: AnswerOption;
@@ -62,8 +61,7 @@ export class ContentChoiceCreatorComponent implements OnInit {
   constructor(private contentService: ContentService,
               private notificationService: NotificationService,
               public dialog: MatDialog,
-              private translationService: TranslateService,
-              private eventService: EventService) {
+              private translationService: TranslateService) {
   }
 
   ngOnInit() {

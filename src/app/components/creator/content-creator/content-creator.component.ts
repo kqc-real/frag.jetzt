@@ -3,7 +3,6 @@ import { ContentText } from '../../../models/content-text';
 import { FormControl } from '@angular/forms';
 import { Room } from '../../../models/room';
 import { TranslateService } from '@ngx-translate/core';
-import { EventService } from '../../../services/util/event.service';
 
 @Component({
   selector: 'app-content-creator',
@@ -32,8 +31,7 @@ export class ContentCreatorComponent implements OnInit {
 
   editDialogMode = false;
 
-  constructor(private translateService: TranslateService,
-              private eventService: EventService) {
+  constructor(private translateService: TranslateService) {
   }
 
   ngOnInit() {
