@@ -12,7 +12,7 @@
       <mat-error *ngIf="roomFormControl.hasError('required')">{{ 'home-page.please-enter' | translate}}</mat-error>
       <mat-error *ngIf="roomFormControl.hasError('pattern')">{{ 'home-page.only-numbers' | translate}}</mat-error>
     </mat-form-field>
-    <button [disabled]="cookiesDisabled()" id="session_enter-button" mat-fab type="submit" aria-labelledby="join-label">
+    <button [disabled]="cookiesDisabled()" id="session_enter-button" mat-fab type="submit" aria-labelledby="join-button-label">
       <mat-icon>input</mat-icon>
     </button>
   </div>
@@ -20,5 +20,5 @@
 </div>
 
 <div class="visually-hidden">
-  <div id="join-label">{{'home-page.accessibility-join' | translate}}</div>
+  <div id="join-button-label">{{ 'home-page.accessibility-join-button' | translate }}</div>
 </div>
