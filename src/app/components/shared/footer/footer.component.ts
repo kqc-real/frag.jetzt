@@ -19,7 +19,7 @@ import { OverlayComponent } from '../../home/_dialogs/overlay/overlay.component'
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
 
@@ -82,9 +82,15 @@ export class FooterComponent implements OnInit {
     const dialogRef = this.dialog.open(CookiesComponent, {
       width: '60%',
       autoFocus: false
+
     });
     dialogRef.disableClose = true;
     dialogRef.componentInstance.deviceType = this.deviceType;
+    dialogRef.afterClosed().subscribe(res => {
+      if (res) {
+        this.showOverlay();
+      }
+    });
   }
 
   showImprint() {
@@ -113,6 +119,11 @@ export class FooterComponent implements OnInit {
     });
     dialogRef.componentInstance.deviceType = this.deviceType;
     dialogRef.disableClose = true;
+    dialogRef.afterClosed().subscribe(res => {
+      if (res) {
+        this.showCookieModal();
+      }
+    });
   }
 
   useLanguage(language: string) {
