@@ -5,9 +5,9 @@
   </mat-label>
   <input (focus)="eventService.makeFocusOnInputTrue()" (blur)="eventService.makeFocusOnInputFalse()" #searchBox id="searchBox" [ngClass]="{'desktop-input': deviceType === 'desktop',
    'mobile-input': deviceType === 'mobile' && !search, 'mobile-input-2': deviceType === 'mobile' && search }"
-         [placeholder]="searchPlaceholder" (input)="searchComments()" [(ngModel)]="searchInput">
+         [placeholder]="searchPlaceholder" (input)="searchComments()" [(ngModel)]="searchInput" aria-labelledby="search_box">
   <button id="search_close-button" mat-icon-button class="searchBarButton close" *ngIf="searchInput !== '' || search"
-          (click)="hideCommentsList=false; searchInput = ''; search = false; searchPlaceholder = '';">
+          (click)="hideCommentsList=false; searchInput = ''; search = false; searchPlaceholder = '';" aria-labelledby="close_search">
     <mat-icon>close</mat-icon>
   </button>
 
@@ -121,4 +121,6 @@
   <div id="beamer_icon">{{'comment-list.a11y-beamer_icon' | translate}}</div>
   <div id="close">{{'comment-list.a11y-close' | translate}}</div>
   <div id="add">{{'comment-list.a11y-add' | translate}}</div>
+  <div id="close_search">{{'comment-list.a11y-close_search' | translate}}</div>
+  <div id="search_box">{{'comment-list.a11y-search_box' | translate}}</div>
 </div>
