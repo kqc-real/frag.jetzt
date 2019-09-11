@@ -12,7 +12,8 @@
   >
   <mat-form-field class="input-block">
     <input #userEmail [errorStateMatcher]="matcher" [formControl]="usernameFormControl" matInput
-           name="username" placeholder="{{ 'login.email' | translate }}"/>
+           name="username" placeholder="{{ 'login.email' | translate }}"
+           aria-labelledby="email-description"/>
     <mat-error *ngIf="usernameFormControl.hasError('email') && !usernameFormControl.hasError('required')">
       {{ 'login.email-invalid' | translate }}
     </mat-error>
@@ -22,7 +23,8 @@
   </mat-form-field>
   <mat-form-field>
     <input #userPassword [errorStateMatcher]="matcher" [formControl]="passwordFormControl" matInput
-           name="password" placeholder="{{ 'login.password' | translate }}" type="password"/>
+           name="password" placeholder="{{ 'login.password' | translate }}" type="password"
+           aria-labelledby="password-description"/>
     <mat-error *ngIf="passwordFormControl.hasError('required')">{{ 'login.password-required' | translate }}</mat-error>
   </mat-form-field>
   <button class="login" mat-flat-button type="submit">
@@ -51,3 +53,8 @@
   confirmButtonLabel="login"
   [cancelButtonClickAction]="buildCloseDialogActionCallback()"
 ></app-dialog-action-buttons>
+
+<div class="visually-hidden">
+  <div id="email-description">{{ 'login.email-description' | translate }}</div>
+  <div id="password-description">{{ 'login.password-description' | translate }}</div>
+</div>
