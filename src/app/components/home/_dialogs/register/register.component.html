@@ -2,7 +2,7 @@
       fxLayoutAlign="space-around" fxLayoutGap="10px">
   <mat-form-field class="input-block">
     <input matInput type="email" #userName placeholder="{{ 'register.email' | translate }}" [formControl]="usernameFormControl"
-           [errorStateMatcher]="matcher" aria-labelledby="email-description">
+           [errorStateMatcher]="matcher" aria-labelledby="register-email-description">
     <mat-error *ngIf="usernameFormControl.hasError('email') && !usernameFormControl.hasError('required')">
       {{ 'register.email-invalid' | translate }}
     </mat-error>
@@ -13,7 +13,7 @@
 
   <mat-form-field class="input-block">
     <input matInput type="email" #userName2 placeholder="{{ 'register.email-verify' | translate }}" [formControl]="username2FormControl"
-           [errorStateMatcher]="matcher" aria-labelledby="email-description-repeat">
+           [errorStateMatcher]="matcher" aria-labelledby="register-email-description-repeat">
     <mat-error *ngIf="username2FormControl.hasError('emailIsEqual') && !username2FormControl.hasError('required')">
       {{ 'register.email-unmatch' | translate }}
     </mat-error>
@@ -22,7 +22,7 @@
   <mat-form-field class="input-block">
     <input matInput type="password" #userPassword1 placeholder="{{ 'register.password' | translate }}"
            [formControl]="password1FormControl" [errorStateMatcher]="matcher"
-           aria-labelledby="password-description">
+           aria-labelledby="register-password-description">
     <mat-error *ngIf="password1FormControl.hasError('required')">
       {{ 'register.password-required' | translate }}
     </mat-error>
@@ -31,7 +31,7 @@
   <mat-form-field class="input-block">
     <input matInput type="password" #userPassword2 placeholder="{{ 'register.password-verify' | translate}}"
            [formControl]="password2FormControl" [errorStateMatcher]="matcher"
-           aria-labelledby="password-description-repeat">
+           aria-labelledby="register-password-description-repeat">
     <mat-error *ngIf="password2FormControl.hasError('required')">
       {{ 'register.password-required' | translate }}
     </mat-error>
@@ -48,8 +48,8 @@
 </form>
 
 <div class="visually-hidden">
-  <div id="email-description">{{ 'register.email-description' | translate }}</div>
-  <div id="email-description-repeat">{{ 'register.email-description-repeat' | translate }}</div>
-  <div id="password-description">{{ 'register.password-description' | translate }}</div>
-  <div id="password-description-repeat">{{ 'register.password-description-repeat' | translate }}</div>
+  <div id="register-email-description">{{ 'register.email-description' | translate }}</div>
+  <div id="register-email-description-repeat">{{ 'register.email-description-repeat' | translate }}</div>
+  <div id="register-password-description">{{ 'register.password-description' | translate }}</div>
+  <div id="register-password-description-repeat">{{ 'register.password-description-repeat' | translate }}</div>
 </div>
