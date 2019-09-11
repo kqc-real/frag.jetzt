@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataProtectionComponent } from '../data-protection/data-protection.component';
-import { MatDialog } from '@angular/material';
-import { OverlayComponent } from '../overlay/overlay.component';
+import { MatDialog, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-cookies',
@@ -13,7 +12,9 @@ export class CookiesComponent implements OnInit {
   deviceType: string;
   currentLang: string;
 
-  constructor(private dialog: MatDialog) { }
+
+  constructor(private dialog: MatDialog,
+              private dialogRef: MatDialogRef<CookiesComponent>) { }
 
   ngOnInit() {
     this.currentLang = localStorage.getItem('currentLang');
@@ -26,8 +27,7 @@ export class CookiesComponent implements OnInit {
 
   declineCookies() {
     localStorage.setItem('cookieAccepted', 'false');
-
-    this.openOverlay();
+    this.dialogRef.close(true);
   }
 
   openDataProtection() {
@@ -37,11 +37,4 @@ export class CookiesComponent implements OnInit {
   dialogRef.componentInstance.deviceType = this.deviceType;
   }
 
-  openOverlay() {
-    const dialogRef = this.dialog.open(OverlayComponent, {
-      width: '60%'
-    });
-    dialogRef.componentInstance.deviceType = this.deviceType;
-    dialogRef.disableClose = true;
-  }
 }
