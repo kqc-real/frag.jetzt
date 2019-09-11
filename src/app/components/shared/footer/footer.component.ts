@@ -73,7 +73,7 @@ showDemo() {
 
 showCookieModal() {
   const dialogRef = this.dialog.open(CookiesComponent, {
-    width: '60%',
+    width: '70%',
     autoFocus: true,
   });
   dialogRef.disableClose = true;

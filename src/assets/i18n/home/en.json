@@ -140,9 +140,9 @@
   },
   "cookies": {
   "info-label": "Opens a dialog with  the frag.jetzt privacy statement",
-  "accept": "Accept",
+  "accept": "Ok",
   "accept-description": "Accepts the use of cookies and proceeds to the app",
-  "cancel": "Decline",
+  "cancel": "No",
   "cancel-description": "Declines cookie usage and exits the app"
   },
   "data-protection": {

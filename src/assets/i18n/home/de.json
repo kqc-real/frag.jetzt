@@ -135,9 +135,9 @@
     },
     "cookies": {
       "info-label": "Öffnet ein Dialogfenster mit der frag.jetzt Datenschutzerklärung.",
-      "accept": "Danke, ich hab's verstanden.",
+      "accept": "Ok",
       "accept-description": "Bestätigt die Verwendung von Cookies und führt zur Startseite zurück.",
-      "cancel": "Nein, lösche meine Spuren.",
+      "cancel": "Nein",
       "cancel-description": "Lehnt die Verwendung von Cookies ab und verlässt die Anwendung."
     },
     "data-protection": {
