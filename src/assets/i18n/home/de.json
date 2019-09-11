@@ -6,11 +6,6 @@
     "decline-label": "Lehnt die Verwendung von Cookies ab und verlässt die Anwendung.",
     "info-label": "Öffnet ein Dialogfenster mit der frag.jetzt Datenschutzerklärung."
   },
-  "overlay": {
-    "message": "Du hast die benutzung von Cookies für diese Anwendung nicht erlaubt. Solange kannst du diese Seite nicht nutzen.",
-    "change": "Einstellung ändern",
-    "change-label": "Öffnet den Dialog mit den Cookie Einstellungen"
-  },
   "data-protection": {
     "consent": "Akzeptieren",
     "consent-label": "Akzeptiert die Datenschutzrichtlinien der Anwendung.",
@@ -124,6 +119,11 @@
     "password-reset": "Passwort vergessen?",
     "register": "Registrieren",
     "welcome": "Online fragen & Fragen voten"
+  },
+  "overlay": {
+    "change": "Einstellung ändern",
+    "change-label": "Öffnet den Dialog mit den Cookie Einstellungen",
+    "message": "Du hast die benutzung von Cookies für diese Anwendung nicht erlaubt. Solange kannst du diese Seite nicht nutzen."
   },
   "password-reset": {
     "cancel": "Zurück",

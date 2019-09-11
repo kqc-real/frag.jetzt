@@ -6,11 +6,6 @@
     "decline-label": "Declines cookie usage and exits the app",
     "info-label": "Opens a dialog with  the frag.jetzt privacy statement"
   },
-  "overlay": {
-    "message": "You have declined cookie usage for this app, thus you can not use it for the time being.",
-    "change": "Change settings",
-    "change-label": "Open the cookie setting dialog"
-  },
   "data-protection": {
     "consent": "Accept",
     "consent-label": "Accept the app's privacy policy and close dialog",
@@ -130,6 +125,11 @@
     "password-reset": "Forgot your password?",
     "register": "Register",
     "welcome": "Ask online & vote questions"
+  },
+  "overlay": {
+    "change": "Change settings",
+    "change-label": "Open the cookie setting dialog"
+    "message": "You have declined cookie usage for this app, thus you can not use it for the time being.",
   },
   "password-reset": {
     "cancel": "Cancel",
