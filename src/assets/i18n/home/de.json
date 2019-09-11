@@ -156,7 +156,8 @@
     "help": {
       "title": "Hilfe",
       "close": "Schließen",
-      "close-label": "Schließt die Hilfe."
+      "close-label": "Schließt die Hilfe.",
+      "cancel": "Schließen"
     },
     "room-create": {
       "cancel": "Zurück",

@@ -160,7 +160,8 @@
   "help": {
   "title": "Help",
   "close": "Close",
-  "close-label": "Closes the help dialog"
+    "close-label": "Closes the help dialog",
+    "cancel": "Close"
   },
   "room-create": {
   "cancel": "Cancel",
