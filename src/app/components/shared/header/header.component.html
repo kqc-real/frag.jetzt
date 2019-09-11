@@ -32,7 +32,7 @@
       <button mat-menu-item *ngIf="user" routerLink="/user">
         <mat-icon class="sessions">work</mat-icon>
         <span *ngIf="!user.isGuest">{{'header.my-sessions' | translate}}</span>
-        <span *ngIf="user.isGuest">{{'header.visited-sessions' | translate}}</span>
+        <span class="test-css" *ngIf="user.isGuest">{{'header.visited-sessions' | translate}}</span>
       </button>
       <button mat-menu-item *ngIf="user && !user.isGuest" (click)="openDeleteUserDialog()">
         <mat-icon color="warn">delete_sweep</mat-icon>
