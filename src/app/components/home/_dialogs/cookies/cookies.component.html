@@ -1,30 +1,18 @@
-
-
 <div class="container">
   <div class="content_container">
-
-    <mat-divider></mat-divider>
-
     <div class="scroll_container">
-
       <div class="inner_scroll_container">
-
-        <h1 mat-dialog-title>Cookies
+        <div class="header-container">
+          <h1 mat-dialog-title tabindex="0" id="cookie-header">{{ 'cookies.header' | translate }}</h1>
           <button mat-icon-button aria-labelledby="info-label" class="info" (click)="openDataProtection()">
             <mat-icon class="info-icon">help</mat-icon>
-          </button></h1>
-
+          </button>
+        </div>
         <mat-divider></mat-divider>
         <app-cookies-de *ngIf="currentLang=='de'"></app-cookies-de>
         <app-cookies-en *ngIf="currentLang=='en'"></app-cookies-en>
-        <mat-divider></mat-divider>
-
       </div>
-
     </div>
-
-    <mat-divider></mat-divider>
-
     <div class="visually-hidden">
       <div id="consent-label">{{ 'data-protection.consent-label' | translate }}</div>
       <div id="deny-label">{{ 'data-protection.deny-label' | translate }}</div>
