@@ -74,7 +74,7 @@ showCookieModal() {
 
 showImprint() {
   this.dialog.open(ImprintComponent, {
-    width: '40%'
+    width: '60%'
   });
 }
 
