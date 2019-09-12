@@ -61,6 +61,7 @@
     "mark-not-favorite": "Bonus-Frage: Dozent hält die Frage für besonders interessant.",
     "mark-not-wrong": "Dozent hat die Frage verneint",
     "mark-read": "Dozent hat die Frage im Hörsaal besprochen.",
+    "new-comment": "Eine neue Frage mit dem Inhalt, {{ comment }}, wurde soeben gestellt.",
     "no-comments": "",
     "send": "Senden",
     "vote-down": "Runtervoten",

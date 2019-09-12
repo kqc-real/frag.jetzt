@@ -61,6 +61,7 @@
     "mark-not-favorite": "Bonus question: Your professor intends to give a bonus for that question.",
     "mark-not-wrong": "Marked as wrong by the professor",
     "mark-read": "Already discussed by the professor",
+    "new-comment": "A new question with the content, {{ comment }}, has been asked.",
     "no-comments": "No questions yet",
     "send": "Send",
     "vote-down": "Vote down",
