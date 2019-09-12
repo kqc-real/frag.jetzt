@@ -1,27 +1,26 @@
-<div>
+ <div>
+   <h1 #header id="header" tabindex="0" class="modal" mat-dialog-title>Cookies
+     <button class="info" mat-icon-button (click)="openDataProtection()">
+       <mat-icon class="info-icon">help_outline</mat-icon>
+     </button>
+   </h1>
 
-  <h1 #header id="header" tabindex="0" class="modal" mat-dialog-title>Cookies
-    <button class="info" mat-icon-button (click)="openDataProtection()">
-      <mat-icon class="info-icon">help_outline</mat-icon>
-    </button>
-  </h1>
 
+   <mat-divider></mat-divider>
+   <mat-dialog-content tabindex="0">
+     <app-cookies-de *ngIf="currentLang=='de'"></app-cookies-de>
+     <app-cookies-en *ngIf="currentLang=='en'"></app-cookies-en>
+   </mat-dialog-content>
 
-  <mat-divider></mat-divider>
-  <div tabindex="0">
-    <app-cookies-de *ngIf="currentLang=='de'"></app-cookies-de>
-    <app-cookies-en *ngIf="currentLang=='en'"></app-cookies-en>
-  </div>
+   <app-dialog-action-buttons
+     buttonsLabelSection="cookies"
+     confirmButtonLabel="accept"
+     [confirmButtonType]=confirmButtonType
+     [cancelButtonClickAction]="buildDeclineActionCallback()"
+     [confirmButtonClickAction]="buildConfirmActionCallback()"
+   ></app-dialog-action-buttons>
 
-  <app-dialog-action-buttons
-    buttonsLabelSection="cookies"
-    confirmButtonLabel="accept"
-    [confirmButtonType]=confirmButtonType
-    [cancelButtonClickAction]="buildDeclineActionCallback()"
-    [confirmButtonClickAction]="buildConfirmActionCallback()"
-  ></app-dialog-action-buttons>
-
-  <div class="visually-hidden">
-    <div id="info-label">{{'cookies.info-label' | translate }}</div>
-  </div>
-</div>
+   <div class="visually-hidden">
+     <div id="info-label">{{'cookies.info-label' | translate }}</div>
+   </div>
+ </div>

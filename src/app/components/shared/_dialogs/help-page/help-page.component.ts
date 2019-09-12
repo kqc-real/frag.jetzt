@@ -9,7 +9,6 @@ import { MatDialogRef, MatDialogTitle } from '@angular/material';
 })
 export class HelpPageComponent implements OnInit {
 
-  deviceType: string;
   currentLang: string;
 
   confirmButtonType: DialogConfirmActionButtonType = DialogConfirmActionButtonType.Primary;

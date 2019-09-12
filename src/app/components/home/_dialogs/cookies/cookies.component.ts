@@ -1,6 +1,6 @@
-import { AfterContentInit, AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterContentInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DataProtectionComponent } from '../data-protection/data-protection.component';
-import { MatDialog, MatDialogRef, MatDialogTitle } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { DialogConfirmActionButtonType } from '../../../shared/dialog/dialog-action-buttons/dialog-action-buttons.component';
 
 @Component({
@@ -12,8 +12,6 @@ export class CookiesComponent implements OnInit, AfterContentInit {
 
   @ViewChild('header')
   dialogTitle: ElementRef;
-
-  deviceType: string;
   currentLang: string;
 
   confirmButtonType: DialogConfirmActionButtonType = DialogConfirmActionButtonType.Primary;
@@ -42,10 +40,9 @@ export class CookiesComponent implements OnInit, AfterContentInit {
   }
 
   openDataProtection() {
-  const dialogRef = this.dialog.open(DataProtectionComponent, {
+    this.dialog.open(DataProtectionComponent, {
     width: '60%'
   });
-  dialogRef.componentInstance.deviceType = this.deviceType;
   }
 
   /**

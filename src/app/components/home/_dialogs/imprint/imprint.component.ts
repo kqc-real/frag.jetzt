@@ -8,7 +8,6 @@ import { MatDialogRef } from '@angular/material';
   styleUrls: ['./imprint.component.scss']
 })
 export class ImprintComponent implements OnInit {
-  deviceType: string;
   currentLang: string;
 
   confirmButtonType: DialogConfirmActionButtonType = DialogConfirmActionButtonType.Primary;

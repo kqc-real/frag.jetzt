@@ -9,7 +9,6 @@ import { MatDialogRef } from '@angular/material';
 })
 export class DataProtectionComponent implements OnInit {
 
-  deviceType: string;
   currentLang: string;
 
   confirmButtonType: DialogConfirmActionButtonType = DialogConfirmActionButtonType.Primary;

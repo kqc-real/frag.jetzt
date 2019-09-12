@@ -1,13 +1,11 @@
 <div>
-
   <h1 tabindex="0" class="modal" mat-dialog-title>{{ 'help.title' | translate }} </h1>
 
   <mat-divider></mat-divider>
-  <div tabindex="0">
+  <mat-dialog-content tabindex="0">
     <app-help-en *ngIf="currentLang=='en'"></app-help-en>
     <app-help-de *ngIf="currentLang=='de'"></app-help-de>
-  </div>
-  <mat-divider></mat-divider>
+  </mat-dialog-content>
 
   <app-dialog-action-buttons
     buttonsLabelSection="help"
@@ -20,4 +18,3 @@
     <div id="close-label">{{ 'help.close-label'| translate }}</div>
   </div>
 </div>
-
