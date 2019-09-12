@@ -73,10 +73,10 @@ export class CommentListComponent implements OnInit {
     this.roomService.getRoom(this.roomId).subscribe( room => {
       this.room = room;
       if (this.room && this.room.extensions && this.room.extensions['comments']) {
-        if (this.room.extensions['comments'].commentThreshold !== null) {
+        if (this.room.extensions['comments'].enableThreshold) {
           this.thresholdEnabled = true;
         }
-        if (this.room.extensions['comments'].enableModeration !== null) {
+        if (this.room.extensions['comments'].enableModeration) {
           this.moderationEnabled = this.room.extensions['comments'].enableModeration;
         }
       }
@@ -135,6 +135,11 @@ export class CommentListComponent implements OnInit {
   }
 
   getComments(): void {
+    if (this.room.extensions['comments'].enableThreshold) {
+      this.thresholdEnabled = true;
+    } else {
+      this.thresholdEnabled = false;
+    }
     this.isLoading = false;
     let commentThreshold = -10;
     if (this.thresholdEnabled) {
