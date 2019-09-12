@@ -54,7 +54,9 @@ export class RoomParticipantPageComponent extends RoomPageComponent implements O
       if (event.keyCode === 49 && this.eventService.focusOnInput === false) {
         document.getElementById('question_answer-button').focus();
       } else if (event.keyCode === 56 && this.eventService.focusOnInput === false) {
-        this.liveAnnouncer.announce('Aktueller Sitzungs-Code:' + this.room.shortId.slice(0, 8));
+        this.liveAnnouncer.clear();
+        this.liveAnnouncer.announce('Aktueller Sitzungs-Name: ' + this.room.name + '. ' +
+                                    'Aktueller Sitzungs-Code:' + this.room.shortId.slice(0, 8));
       } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
         this.announce();
       } else if (event.keyCode === 27 && this.eventService.focusOnInput === true) {
@@ -71,6 +73,7 @@ export class RoomParticipantPageComponent extends RoomPageComponent implements O
 
   public announce() {
     // this.liveAnnouncer.announce('Willkommen auf dieser Seite' + document.getElementById('announcer_text').textContent, 'assertive');
+    this.liveAnnouncer.clear();
     this.liveAnnouncer.announce('Du befindest dich in der Sitzung mit dem von dir eingegebenen Sitzungs-Code. ' +
       'Drücke die Taste 1 um eine Frage zu stellen, die Taste 2 für das Sitzungs-Menü, ' +
       'die Taste 8 um den aktuellen Sitzungs-Code zu hören, die Taste 0 um auf den Zurück-Button zu gelangen, ' +
