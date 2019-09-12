@@ -57,19 +57,12 @@ export class FooterComponent implements OnInit {
     }
   }
 
-showDemo() {
-  const dialogRef = this.dialog.open(DemoVideoComponent, {
-    position: {
-      left: '10px',
-      right: '10px'
-    },
-    maxWidth: '100vw',
-    maxHeight: '100vh',
-    height: '100%',
-    width: '100%'
-  });
-  dialogRef.componentInstance.deviceType = this.deviceType;
-}
+  showDemo() {
+    const dialogRef = this.dialog.open(DemoVideoComponent, {
+      width: '70%'
+    });
+    dialogRef.componentInstance.deviceType = this.deviceType;
+  }
 
 showCookieModal() {
   const dialogRef = this.dialog.open(CookiesComponent, {
@@ -97,14 +90,14 @@ showDataProtection() {
   });
 }
 
-useLanguage(language: string) {
-  this.translateService.use(language);
-  localStorage.setItem('currentLang', language);
-  this.langService.langEmitter.emit(language);
-}
+  useLanguage(language: string) {
+    this.translateService.use(language);
+    localStorage.setItem('currentLang', language);
+    this.langService.langEmitter.emit(language);
+  }
 
-changeTheme(theme: Theme) {
-  this.themeClass = theme.name;
-  this.themeService.activate(theme.name);
-}
+  changeTheme(theme: Theme) {
+    this.themeClass = theme.name;
+    this.themeService.activate(theme.name);
+  }
 }
