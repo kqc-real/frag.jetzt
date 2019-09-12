@@ -1,16 +1,16 @@
 {
   "cookies": {
     "accept": "Accept",
-    "accept-label": "Accepts the use of cookies and proceeds to the app",
+    "accept-label": "Accept the use of cookies and proceed to the app",
     "decline": "Decline",
-    "decline-label": "Declines cookie usage and exits the app",
-    "info-label": "Opens a dialog with the frag.jetzt privacy policy"
+    "decline-label": "Decline cookie usage and exit the app",
+    "info-label": "Open the frag.jetzt privacy policy"
   },
   "data-protection": {
     "consent": "Accept",
     "consent-label": "Accept the app's privacy policy and close dialog",
     "deny": "Decline",
-    "deny-label": "Decline the app's privacy policy and close dialog",
+    "deny-label": "Decline the app's privacy policy and exit the app",
     "title": "Privacy policy"
   },
   "delete-account": {
