@@ -92,7 +92,7 @@
 </button>
 
 <div fxLayout="row" fxLayoutAlign="center" *ngIf="comments.length < 3 && !isLoading">
-  <button mat-fab class="fab-extended" (click)="openCreateDialog()">
+  <button mat-fab class="fab-extended" (click)="openCreateDialog()" aria-labelledby="add">
     <mat-icon class="add">add</mat-icon>
     {{'comment-list.add-comment' | translate}}
   </button>
