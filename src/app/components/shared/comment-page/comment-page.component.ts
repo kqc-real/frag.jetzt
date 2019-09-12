@@ -5,6 +5,7 @@ import { NotificationService } from '../../../services/util/notification.service
 import { AuthenticationService } from '../../../services/http/authentication.service';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { EventService } from '../../../services/util/event.service';
+import { Room } from '../../../models/room';
 
 @Component({
   selector: 'app-comment-page',
@@ -13,7 +14,7 @@ import { EventService } from '../../../services/util/event.service';
 })
 export class CommentPageComponent implements OnInit, OnDestroy {
   roomId: string;
-  shortId: string;
+  room: Room;
   user: User;
 
   listenerFn: () => void;
@@ -27,7 +28,6 @@ export class CommentPageComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.roomId = localStorage.getItem('roomId');
-    this.shortId = localStorage.getItem('shortId');
     this.user = this.authenticationService.getUser();
     this.announce();
     this.listenerFn = this._r.listen(document, 'keyup', (event) => {
@@ -44,7 +44,8 @@ export class CommentPageComponent implements OnInit, OnDestroy {
       } else if (event.keyCode === 53 && this.eventService.focusOnInput === false) {
         document.getElementById('filter-button').focus();
       } else if (event.keyCode === 56 && this.eventService.focusOnInput === false) {
-        this.liveAnnouncer.announce('Aktueller Sitzungs-Code:' + this.shortId.slice(0, 8));
+        this.liveAnnouncer.clear();
+        this.liveAnnouncer.announce('Aktueller Sitzungs-Code:' + this.room.shortId.slice(0, 8));
       } else if ((event.keyCode === 57 || event.keyCode === 27) && this.eventService.focusOnInput === false) {
         this.announce();
       } else if (document.getElementById('search_close-button') && event.keyCode === 27
@@ -68,6 +69,7 @@ export class CommentPageComponent implements OnInit, OnDestroy {
   }
 
   public announce() {
+    this.liveAnnouncer.clear();
     this.liveAnnouncer.announce('Sie befinden sich auf der Kommentar-Seite Ihrer Sitzung. ' +
       'Drücken Sie die Taste 1 um eine Frage zu stellen, die Taste 2 um auf das Sitzungs-Menü zu gelangen, ' +
       'die Taste 8 um den aktuellen Sitzungs-Code zu hören, die Taste 0 um zurück zur Benutzer-Seite zu gelangen. ' +
