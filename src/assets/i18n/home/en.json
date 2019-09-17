@@ -77,11 +77,12 @@
   "home-page": {
     "accessibility-create": "Create a new session",
     "accessibility-join-button": "Enter the room with the specified session ID.",
-    "accessibility-join-input": "Here you can enter the session ID of the room you want to join.",
+    "accessibility-join-input": "Here you can enter the session ID of the room you want to join. Your lecturer will tell you the session ID.",
     "create-session": "New session",
     "created-1": "Session '",
     "created-2": "' successfully created",
     "exactly-8": "A session ID has exactly 8 digits.",
+    "live-announcer": "Welcome to fragpunktjetzt. To get information about key combinations press the Enter key or call the announcement later with the Escape key.",
     "install": "Install",
     "join-demo-session": "Join public session",
     "no-empty-name": "Please enter a name.",
