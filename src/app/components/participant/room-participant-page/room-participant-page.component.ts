@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Renderer2 } from '@angular/core';
+import { Component, OnInit, OnDestroy, Renderer2, AfterContentInit } from '@angular/core';
 import { Room } from '../../../models/room';
 import { User } from '../../../models/user';
 import { UserRole } from '../../../models/user-roles.enum';
@@ -19,7 +19,7 @@ import { EventService } from '../../../services/util/event.service';
   templateUrl: './room-participant-page.component.html',
   styleUrls: ['./room-participant-page.component.scss']
 })
-export class RoomParticipantPageComponent extends RoomPageComponent implements OnInit, OnDestroy {
+export class RoomParticipantPageComponent extends RoomPageComponent implements OnInit, OnDestroy, AfterContentInit {
 
   room: Room;
   isLoading = true;
@@ -43,13 +43,18 @@ export class RoomParticipantPageComponent extends RoomPageComponent implements O
     langService.langEmitter.subscribe(lang => translateService.use(lang));
   }
 
+  ngAfterContentInit(): void {
+    setTimeout( () => {
+      document.getElementById('live_announcer-button').focus();
+    }, 700);
+  }
+
   ngOnInit() {
     window.scroll(0, 0);
     this.route.params.subscribe(params => {
       this.initializeRoom(params['roomId']);
     });
     this.translateService.use(localStorage.getItem('currentLang'));
-    this.announce();
     this.listenerFn = this._r.listen(document, 'keyup', (event) => {
       if (event.keyCode === 49 && this.eventService.focusOnInput === false) {
         document.getElementById('question_answer-button').focus();
@@ -72,7 +77,6 @@ export class RoomParticipantPageComponent extends RoomPageComponent implements O
   }
 
   public announce() {
-    // this.liveAnnouncer.announce('Willkommen auf dieser Seite' + document.getElementById('announcer_text').textContent, 'assertive');
     this.liveAnnouncer.clear();
     this.liveAnnouncer.announce('Du befindest dich in der Sitzung mit dem von dir eingegebenen Sitzungs-Code. ' +
       'Drücke die Taste 1 um eine Frage zu stellen, die Taste 2 für das Sitzungs-Menü, ' +
