@@ -66,18 +66,21 @@
           }}</span>
       </div>
       <span class="fill-remaining-space click" (click)="openPresentDialog(comment)"></span>
-      <div fxLayout="column" (tap)="startAnimation('rubberBand')" [@rubberBand]="animationState"
+      <div fxLayout="column" *ngIf="isStudent" (tap)="startAnimation('rubberBand')" [@rubberBand]="animationState"
            (@rubberBand.done)="resetAnimationState()">
         <button mat-icon-button (click)="voteUp(comment)" matTooltip="{{ 'comment-page.vote-up' | translate }}"
                 tabindex="0" attr.aria-labelledby="comment_vote_up{{ comment.id }}">
           <mat-icon class="voting-icon" [ngClass]="{'upVoted' : hasVoted === 1}">keyboard_arrow_up</mat-icon>
         </button>
-        <span class="score">{{comment.score}}</span>
+        <h2 class="score">{{comment.score}}</h2>
         <button mat-icon-button (click)="voteDown(comment)" matTooltip="{{ 'comment-page.vote-down' | translate }}"
                 tabindex="0" attr.aria-labelledby="comment_vote_down{{ comment.id }}">
           <mat-icon class="voting-icon" [ngClass]="{'downVoted' : hasVoted === -1}">keyboard_arrow_down</mat-icon>
         </button>
       </div>
+    <div *ngIf="isCreator" fxLayout="column" fxLayoutAlign="center">
+      <h2 class="scoreCreator">{{comment.score}}</h2>
+    </div>
     </div>
   </div>
 </mat-card>

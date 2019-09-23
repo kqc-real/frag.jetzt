@@ -52,6 +52,11 @@ mat-card-content > :first-child {
   color: var(--on-surface)
 }
 
+.scoreCreator {
+  color: var(--on-surface);
+  margin: 0 10px 0 10px;
+}
+
 .body {
   min-width: 200px;
   min-height: 100px;
