@@ -19,6 +19,7 @@ export class ModeratorService extends BaseHttpService {
     user: '/user',
     find: '/find'
   };
+  private joinDate = new Date(Date.now());
 
   constructor(private http: HttpClient) {
     super();
@@ -65,5 +66,10 @@ export class ModeratorService extends BaseHttpService {
       tap(() => ''),
       catchError(this.handleError('getUserData', []))
     );
+  }
+
+  addToHistory(roomId: string, userId: string): void {
+    const connectionUrl = `${ this.apiUrl.base + this.apiUrl.user }/${ userId }/roomHistory`;
+    this.http.post(connectionUrl, { roomId: roomId, lastVisit: this.joinDate.getTime() }, httpOptions).subscribe(() => {});
   }
 }
