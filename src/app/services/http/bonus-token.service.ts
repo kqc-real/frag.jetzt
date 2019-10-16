@@ -44,4 +44,12 @@ export class BonusTokenService extends BaseHttpService {
       catchError(this.handleError<BonusToken[]>(`get bonus token by userId = ${userId}`))
     );
   }
+
+  deleteToken(roomId: string, commentId: string, userId: string) {
+    const connectionUrl = `${this.apiUrl.base + this.apiUrl.bonustoken}/?roomid=${roomId}&commentid=${commentId}&userid=${userId}`;
+    return this.http.delete<BonusToken>(connectionUrl, httpOptions).pipe(
+      tap(_ => ''),
+      catchError(this.handleError<BonusToken>('deleteToken'))
+    );
+  }
 }
