@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  // tslint:disable-next-line:directive-selector
-  selector: 'lib-ars',
   template: `
     <p>
       ars works!
