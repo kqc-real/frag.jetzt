@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: []
 })
+// tslint:disable-next-line:directive-class-suffix
 export class ArsComponent implements OnInit {
 
   constructor() { }
