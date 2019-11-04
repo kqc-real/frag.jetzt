@@ -2,8 +2,10 @@ import { Directive } from '@angular/core';
 
 
 @Directive({
-  selector:'[ars-slider]'
+  // tslint:disable-next-line:directive-selector
+  selector: '[ars-slider]'
 })
-export class ArsSlider{
+// tslint:disable-next-line:directive-class-suffix
+export class ArsSlider {
 
 }
