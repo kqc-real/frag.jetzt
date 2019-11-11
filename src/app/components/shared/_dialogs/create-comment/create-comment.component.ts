@@ -19,6 +19,7 @@ export class CreateCommentComponent implements OnInit {
 
   user: User;
   roomId: string;
+  tags: string[];
 
   bodyForm = new FormControl('', [Validators.required]);
 
