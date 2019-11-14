@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ClientAuthentication } from '../../models/client-authentication';
 import { AuthProvider } from '../../models/auth-provider';
 import { BaseHttpService } from './base-http.service';
+import { Subscription } from 'rxjs';
 
 @Injectable()
 export class AuthenticationService extends BaseHttpService {
@@ -31,6 +32,7 @@ export class AuthenticationService extends BaseHttpService {
   };
 
   private roomAccess = new Map();
+  private subs: Subscription[];
 
   constructor(
     private dataStoreService: DataStoreService,
@@ -53,15 +55,15 @@ export class AuthenticationService extends BaseHttpService {
         this.roomAccess.set(roomId, role);
       }
     }
-    this.eventService.on<any>('RoomJoined').subscribe(payload => {
+    this.subs['joined'] = this.eventService.on<any>('RoomJoined').subscribe(payload => {
       this.roomAccess.set(payload.id, UserRole.PARTICIPANT);
       this.saveAccessToLocalStorage();
     });
-    this.eventService.on<any>('RoomDeleted').subscribe(payload => {
+    this.subs['deleted'] = this.eventService.on<any>('RoomDeleted').subscribe(payload => {
       this.roomAccess.delete(payload.id);
       this.saveAccessToLocalStorage();
     });
-    this.eventService.on<any>('RoomCreated').subscribe(payload => {
+    this.subs['created'] = this.eventService.on<any>('RoomCreated').subscribe(payload => {
       this.roomAccess.set(payload.id, UserRole.CREATOR);
       this.saveAccessToLocalStorage();
     });
