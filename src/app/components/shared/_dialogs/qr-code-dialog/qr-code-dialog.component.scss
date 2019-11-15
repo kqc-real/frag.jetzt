@@ -10,8 +10,11 @@
 }
 
 .qr_header>button{
-  margin-left:16px;
+  margin-right:16px;
   margin-top:12px;
+  position: fixed; /* or position: absolute; */
+  top: 0;
+  right: 0;
   color:#000000;
 }
 
@@ -30,4 +33,7 @@
 
 .qr_content img{
   display:none;
+}
+a{
+  color: blue;
 }
