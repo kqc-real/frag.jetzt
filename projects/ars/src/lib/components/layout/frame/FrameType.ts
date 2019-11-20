@@ -1,9 +1,14 @@
-import { Provider } from '../../../models/util/Provider';
+import { forwardRef } from '@angular/core';
 
 
 export class FrameType {
 
-  public static provide = Provider.create(FrameType);
+  public static provide(e: any) {
+    return {
+      provide: FrameType,
+      useExisting: forwardRef(() => e)
+    };
+  }
 
   constructor(private type: string) {
   }
