@@ -12,6 +12,14 @@ import { FrameTestComponent } from './components/test/layout/frame/frame-test/fr
 import { RespComponent } from './components/layout/base/resp/resp.component';
 import { ScrollDirective } from './components/layout/base/scroll/ScrollDirective';
 import { MaterialTypographyComponent } from './components/style/typography/material-typography/material-typography.component';
+import { DialogOverlayComponent } from './components/content/dialog/dialog-overlay/dialog-overlay.component';
+import { DialogTestComponent } from './components/test/content/dialog/dialog-test/dialog-test.component';
+import { A11yModule } from '@angular/cdk/a11y';
+import { DialogBoxComponent } from './components/content/dialog/dialog-box/dialog-box.component';
+import { DialogBoxContentTemplateComponent } from './components/content/dialog/dialog-box-content-template/dialog-box-content-template.component';
+import { DialogExampleComponent } from './components/test/dialog/dialog-example/dialog-example.component';
+import { MaterialDialogComponent } from './components/style/dialog/material-dialog/material-dialog.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,11 +34,19 @@ import { MaterialTypographyComponent } from './components/style/typography/mater
     FrameTestComponent,
     RespComponent,
     ScrollDirective,
-    MaterialTypographyComponent
+    MaterialTypographyComponent,
+    DialogOverlayComponent,
+    DialogTestComponent,
+    DialogBoxComponent,
+    DialogBoxContentTemplateComponent,
+    DialogExampleComponent,
+    MaterialDialogComponent
   ],
   imports: [
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    A11yModule,
+    CommonModule
   ],
   exports: [
     ArsComponent,
@@ -44,7 +60,14 @@ import { MaterialTypographyComponent } from './components/style/typography/mater
     RowComponent,
     RespComponent,
     ColComponent,
-    FillComponent
+    FillComponent,
+    DialogTestComponent
+  ],
+  entryComponents: [
+    DialogOverlayComponent,
+    DialogBoxComponent,
+    DialogBoxContentTemplateComponent,
+    DialogExampleComponent
   ]
 })
 export class ArsModule { }

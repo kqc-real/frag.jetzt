@@ -1,0 +1,15 @@
+
+<ars-dialog-box (onCloseEmit)="onCloseEmit.emit();">
+  <div class="dialog-limbo">
+    <div tabindex="0">Dialog. Tab to continue. Escape to close dialog.</div>
+  </div>
+  <div class="dialog-container-header" tabindex="0">
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div class="dialog-container-content" tabindex="0">
+    <ng-content select="[content]"></ng-content>
+  </div>
+  <div class="dialog-container-footer">
+    <ng-content select="[footer]"></ng-content>
+  </div>
+</ars-dialog-box>
