@@ -1,0 +1,34 @@
+
+
+<ars-dialog-overlay class="dialog-overlay" [closeByOverlay]="false" (onCloseEmit)="onCloseEmit.emit();">
+  <div class="dialog-fs-container" ars-flex-box>
+    <ars-row [height]="64" class="dialog-fs-header" ars-flex-box>
+      <ars-col>
+        <button class="dialog-fs-header-btn" (click)="onCloseEmit.emit();"><i>arrow_back</i></button>
+      </ars-col>
+      <ars-fill class="dialog-fs-header-title">
+        <ng-content select="[header]">
+        </ng-content>
+      </ars-fill>
+    </ars-row>
+    <ars-fill [overflow]="'hidden'">
+      <ars-resp ars-scroll [width]="600" [margin]="24" [fillHeight]="true" [scroll]="'vertical'">
+        <ng-content select="[content]"></ng-content>
+      </ars-resp>
+    </ars-fill>
+  </div>
+  <!--
+  <ars-row [height]="64" class="dialog-fs-header" ars-flex-box>
+    <ars-col>
+      <button class="dialog-fs-header-btn" (click)="onCloseEmit.emit();"><i>arrow_back</i></button>
+    </ars-col>
+    <ars-fill class="dialog-fs-header-title">
+      <ng-content select="[header]">
+      </ng-content>
+    </ars-fill>
+  </ars-row>
+  <ars-fill [overflow]="'hidden'">
+    <ng-content select="[content]"></ng-content>
+  </ars-fill>
+  -->
+</ars-dialog-overlay>

@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { DialogEvent } from '../DialogEvent';
 
 @Component({
-  selector: 'ars-dialog-box-content-template',
-  templateUrl: './dialog-box-content-template.component.html',
-  styleUrls: ['./dialog-box-content-template.component.scss']
+  selector: 'ars-dialog-box-content',
+  templateUrl: './dialog-box-content.component.html',
+  styleUrls: ['./dialog-box-content.component.scss']
 })
-export class DialogBoxContentTemplateComponent implements OnInit,DialogEvent {
+export class DialogBoxContentComponent implements OnInit,DialogEvent {
 
   @Output() onCloseEmit:EventEmitter<void>=new EventEmitter<void>();
 

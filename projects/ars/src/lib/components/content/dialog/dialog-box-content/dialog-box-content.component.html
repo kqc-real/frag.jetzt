@@ -1,12 +1,13 @@
 
 <ars-dialog-box (onCloseEmit)="onCloseEmit.emit();">
   <div class="dialog-limbo">
-    <div tabindex="0">Dialog. Tab to continue. Escape to close dialog.</div>
+    <div tabindex="0">Dialog</div>
+    <ng-content select="[limbo]"></ng-content>
   </div>
-  <div class="dialog-container-header" tabindex="0">
+  <div class="dialog-container-header">
     <ng-content select="[header]"></ng-content>
   </div>
-  <div class="dialog-container-content" tabindex="0">
+  <div class="dialog-container-content">
     <ng-content select="[content]"></ng-content>
   </div>
   <div class="dialog-container-footer">

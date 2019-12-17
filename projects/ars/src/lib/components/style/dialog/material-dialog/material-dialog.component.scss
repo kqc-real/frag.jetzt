@@ -9,7 +9,6 @@ $dialog-button-space-between:12px;
     &-btn-wrp{
       display:flex;
       flex-direction:row;
-
       button{
         padding:0;
         margin:0;
@@ -36,15 +35,15 @@ $dialog-button-space-between:12px;
         color:#000000;
         text-transform:uppercase;
       }
-      >*{
-        padding-left:$dialog-button-space-between;
-        padding-right:$dialog-button-space-between;
-      }
       >:first-child{
         padding-left:$dialog-padding-base;
       }
       >:last-child{
         padding-right:$dialog-padding-base;
+      }
+      >button{
+        padding-left:$dialog-button-space-between;
+        padding-right:$dialog-button-space-between;
       }
     }
     &-container{
@@ -61,7 +60,6 @@ $dialog-button-space-between:12px;
         padding-right:$dialog-padding-base;
         padding-bottom:$dialog-padding-base;
         padding-top:10px;
-
       }
       &-footer{
       }
@@ -71,6 +69,7 @@ $dialog-button-space-between:12px;
       font-size:18px;
       font-weight:500;
       line-height:24px;
+      color:#212121;
     }
   }
 

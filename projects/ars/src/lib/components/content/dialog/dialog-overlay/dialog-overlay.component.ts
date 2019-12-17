@@ -3,7 +3,7 @@ import {
   Component,
   ContentChild,
   ContentChildren,
-  EventEmitter,
+  EventEmitter, Input,
   OnDestroy,
   OnInit,
   Output,
@@ -20,10 +20,12 @@ import { DialogEvent } from '../DialogEvent';
 })
 export class DialogOverlayComponent implements OnInit,AfterViewInit,OnDestroy,DialogEvent {
 
+  @Input() closeByOverlay:boolean=true;
   @Output() onCloseEmit:EventEmitter<void>=new EventEmitter<void>();
   @ViewChild(CdkTrapFocus)trap:CdkTrapFocus;
 
   private escapeEvent;
+  private lastFocus;
 
   constructor() { }
 
@@ -31,16 +33,21 @@ export class DialogOverlayComponent implements OnInit,AfterViewInit,OnDestroy,Di
   }
 
   ngAfterViewInit(){
+    this.lastFocus=document.activeElement;
     window.addEventListener('keydown',this.escapeEvent=e=>{
       if(e.key==='Escape')this.closeDialog();
     });
+    this.trap.enabled=true;
+    this.trap.focusTrap.focusFirstTabbableElement();
   }
 
   ngOnDestroy(){
     window.removeEventListener('keydown',this.escapeEvent);
+    this.lastFocus.focus();
   }
 
   private closeDialogByOverlay(e:MouseEvent){
+    if(!this.closeByOverlay)return;
     if(e.target!==e.currentTarget){
       e.cancelBubble=true;
       return;
