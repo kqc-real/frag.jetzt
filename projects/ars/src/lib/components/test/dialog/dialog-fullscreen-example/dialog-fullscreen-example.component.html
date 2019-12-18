@@ -1,7 +1,10 @@
 <ars-style-typography-material>
   <ars-style-dialog-material>
-    <ars-dialog-fullscreen (onCloseEmit)="onCloseEmit.emit();">
-      <h1 header class="dialog-title">Einführung</h1>
+    <ars-dialog-fullscreen (closeEmit)="closeEmit.emit();">
+      <ng-container limbo>
+        <p tabindex="0">Das ist ein Dialog. DU kannst iowdopaiwjkd</p>
+      </ng-container>
+      <h1 header class="dialog-title" tabindex="0">Einführung</h1>
       <ng-container content>
         <ars-row [height]="150"></ars-row>
         <h1 class="typo-main-h space-page-p">Haben Sie Fragen?</h1>

@@ -6,13 +6,15 @@ import { DialogEvent } from '../../../content/dialog/DialogEvent';
   templateUrl: './dialog-example.component.html',
   styleUrls: ['./dialog-example.component.scss']
 })
-export class DialogExampleComponent implements OnInit,DialogEvent {
+export class DialogExampleComponent implements OnInit, DialogEvent {
 
-  @Output() public onCloseEmit:EventEmitter<void>=new EventEmitter<void>();
+  @Output() public closeEmit: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
+
 
 }

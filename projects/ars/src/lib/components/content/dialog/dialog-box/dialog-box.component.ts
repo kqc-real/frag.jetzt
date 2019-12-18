@@ -6,11 +6,12 @@ import { DialogEvent } from '../DialogEvent';
   templateUrl: './dialog-box.component.html',
   styleUrls: ['./dialog-box.component.scss']
 })
-export class DialogBoxComponent implements OnInit,DialogEvent {
+export class DialogBoxComponent implements OnInit, DialogEvent {
 
-  @Output() onCloseEmit:EventEmitter<void>=new EventEmitter<void>();
+  @Output() closeEmit: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

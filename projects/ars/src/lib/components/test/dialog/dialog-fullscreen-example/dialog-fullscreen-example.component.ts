@@ -6,11 +6,12 @@ import { DialogEvent } from '../../../content/dialog/DialogEvent';
   templateUrl: './dialog-fullscreen-example.component.html',
   styleUrls: ['./dialog-fullscreen-example.component.scss']
 })
-export class DialogFullscreenExampleComponent implements OnInit,DialogEvent {
+export class DialogFullscreenExampleComponent implements OnInit, DialogEvent {
 
-  @Output() onCloseEmit:EventEmitter<void>=new EventEmitter<void>();
+  @Output() closeEmit: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

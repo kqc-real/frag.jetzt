@@ -6,9 +6,9 @@ import { DialogEvent } from '../DialogEvent';
   templateUrl: './dialog-box-content.component.html',
   styleUrls: ['./dialog-box-content.component.scss']
 })
-export class DialogBoxContentComponent implements OnInit,DialogEvent {
+export class DialogBoxContentComponent implements OnInit, DialogEvent {
 
-  @Output() onCloseEmit:EventEmitter<void>=new EventEmitter<void>();
+  @Output() closeEmit: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() {
   }

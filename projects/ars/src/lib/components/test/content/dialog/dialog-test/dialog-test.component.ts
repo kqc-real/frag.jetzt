@@ -14,36 +14,37 @@ import { DebugBorder } from '../../../../../models/debug/DebugBorder';
   templateUrl: './dialog-test.component.html',
   styleUrls: ['./dialog-test.component.scss']
 })
-export class DialogTestComponent implements OnInit,AfterViewInit {
+export class DialogTestComponent implements OnInit, AfterViewInit {
 
-  constructor(private overlay:Overlay) { }
+  constructor(private overlay: Overlay) {
+  }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     DebugBorder.border('c');
   }
 
-  createDialog(){
+  createDialog() {
     this.createDia(DialogExampleComponent);
   }
 
-  createDialogFullscreen(){
+  createDialogFullscreen() {
     this.createDia(DialogFullscreenExampleComponent);
   }
 
-  createDia(cls:any,e?:DialogEvent){
-    const dialog=this.overlay.create();
-    const portal=new ComponentPortal(cls);
-    const dialogRef=dialog.attach(portal);
-    const instance=dialogRef.instance;
-    if(typeof e==='undefined'){
-      e=<DialogEvent>instance;
+  createDia(cls: any, e?: DialogEvent) {
+    const dialog = this.overlay.create();
+    const portal = new ComponentPortal(cls);
+    const dialogRef = dialog.attach(portal);
+    const instance = dialogRef.instance;
+    if (typeof e === 'undefined') {
+      e = <DialogEvent>instance;
     }
-    e.onCloseEmit.subscribe(()=>{
+    e.closeEmit.subscribe(() => {
       dialog.detach();
-    })
+    });
   }
 
 }
