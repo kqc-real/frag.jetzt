@@ -37,7 +37,7 @@ export class DialogOverlayComponent implements OnInit, AfterViewInit, OnDestroy,
     this.lastFocus = document.activeElement;
     window.addEventListener('keydown', this.escapeEvent = e => {
       if (e.key === 'Escape') {
-        this.closeDialog();
+        this.closeEmit.emit();
       }
     });
     this.trap.enabled = true;
@@ -49,7 +49,7 @@ export class DialogOverlayComponent implements OnInit, AfterViewInit, OnDestroy,
     this.lastFocus.focus();
   }
 
-  private closeDialogByOverlay(e: MouseEvent) {
+  public closeDialogByOverlay(e: MouseEvent) {
     if (!this.closeByOverlay) {
       return;
     }
@@ -57,10 +57,6 @@ export class DialogOverlayComponent implements OnInit, AfterViewInit, OnDestroy,
       e.cancelBubble = true;
       return;
     }
-    this.closeDialog();
-  }
-
-  private closeDialog() {
     this.closeEmit.emit();
   }
 
