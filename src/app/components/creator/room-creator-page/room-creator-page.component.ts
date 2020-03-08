@@ -107,12 +107,6 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
 
   }
 
-  updateGeneralSettings() {
-    this.room.name = this.updRoom.name;
-    this.room.description = this.updRoom.description;
-    this.saveChanges();
-  }
-
   updateCommentSettings(settings: CommentSettingsDialog) {
     const commentExtension: TSMap<string, any> = new TSMap();
     commentExtension.set('enableThreshold', settings.enableThreshold);
@@ -139,10 +133,15 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
   }
 
   saveChanges() {
-    this.roomService.updateRoom(this.room)
+    this.roomService.updateRoom(this.updRoom)
       .subscribe((room) => {
         this.room = room;
         this.translateService.get('room-page.changes-successful').subscribe(msg => {
+          this.notification.show(msg);
+        });
+      },
+      error => {
+        this.translateService.get('room-page.changes-gone-wrong').subscribe(msg => {
           this.notification.show(msg);
         });
       });
@@ -159,7 +158,7 @@ export class RoomCreatorPageComponent extends RoomPageComponent implements OnIni
         if (result === 'abort') {
           return;
         } else if (result !== 'delete') {
-          this.updateGeneralSettings();
+          this.saveChanges();
         }
       });
     dialogRef.backdropClick().subscribe( res => {
